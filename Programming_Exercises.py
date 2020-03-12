@@ -67,10 +67,10 @@
             什么都不输入/输入一个或多个空格都算为空
             输入为空也计入验证次数
 '''
-import datetime
-today = datetime.date.today()
-username = 'wyh'
-passwd = '123456'
+# import datetime
+# today = datetime.date.today()
+# username = 'wyh'
+# passwd = '123456'
 # for i in range(3):
 #     username_new = input('请输入您的账号：')
 #     password = input('请输入您的密码：')
@@ -84,18 +84,32 @@ passwd = '123456'
 # else:
 #     print('失败次数过多，退出！')
 
-#使用while循环实现
-count = 0
-while count < 3:
-    username_new = input('请输入您的账号：')
-    password = input('请输入您的密码：')
-    count += 1
-    if username_new.strip() == '' or password.strip() == '':
-        print('账号/密码不能为空，请重新输入！')
-    elif username_new == username and password == passwd:
-        print('欢迎%s登录，今天的日期是：%s' % (username_new, today))
-        break
+# #使用while循环实现
+# count = 0
+# while count < 3:
+#     username_new = input('请输入您的账号：')
+#     password = input('请输入您的密码：')
+#     count += 1
+#     if username_new.strip() == '' or password.strip() == '':
+#         print('账号/密码不能为空，请重新输入！')
+#     elif username_new == username and password == passwd:
+#         print('欢迎%s登录，今天的日期是：%s' % (username_new, today))
+#         break
+#     else:
+#         print('输入的账号/密码错误，请重新输入！')
+# else:
+#     print('失败次数过多，退出！')
+
+'''
+    例子4：校验手机号的小程序
+'''
+user = ['test01','test02']
+for i in range(3):
+    username = input('请输入用户名：')
+    # if user.count(username) >0 :
+    if username in user:  #in就是判断在不在里面，not in 就是判断不包含在里面
+        print("用户已注册")
     else:
-        print('输入的账号/密码错误，请重新输入！')
-else:
-    print('失败次数过多，退出！')
+        print("用户未注册")
+        user.append(username)
+print(user)
