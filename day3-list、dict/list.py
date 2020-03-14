@@ -69,3 +69,38 @@ for i in range(len(list_num)):
     print(list_num[i])
 for i in list_num:
     print(i)
+print('#########################')
+for index,ip in enumerate(list_num):  #使用枚举函数，它会帮你计算下标和元素
+    print(index,ip)
+    list_num[index] = 'wyh'+str(ip)
+print(list_num)
+print('**********切片操作*************')
+#list切片操作
+#格式：list[首数值:尾数值]
+#切片取值，是顾头不顾尾的；即取值最后一个值是不会取的
+L = list(range(1,10))
+print(L)
+#取出1-4的值
+print(L[0:4]) #去小标为0-3的值
+print(L[:4]) #从首个下标开始取值，取到下标为3的位置
+print(L[2:]) #取从下标为2开始往后的所有值
+print(L[:]) #取list中的所有的值
+print(L[::2]) #根据步长每隔2个值取一次值
+print(L[1::2]) #取偶数
+print(L[::2]) #取奇数，如果步长是整数，那么从左往右开始取值
+print(L[::-2]) #取奇数，如果后边的步长是负数，那么从右往左开始取值
+print(L[-3:-1])
+words = '字符串切片操作！'
+print(words[1:3])
+print(words[::-1])
+for index,w in enumerate(words):
+    print(index,w)
+for w in range(len(words)):
+    print(words[w])
+s = '上海自来水来自海上'  #回文算法，即正读和反读都是一样的语句
+for i in range(3):
+    s = input('请输入一个字符串：')
+    if s == s[::-1]:
+        print('是回文语句')
+    else:
+        print('不是回文语句')

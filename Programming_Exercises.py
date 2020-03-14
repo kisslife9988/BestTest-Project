@@ -103,13 +103,81 @@
 '''
     例子4：校验手机号的小程序
 '''
-user = ['test01','test02']
+# user = ['test01','test02']
+# for i in range(3):
+#     username = input('请输入用户名：')
+#     # if user.count(username) >0 :
+#     if username in user:  #in就是判断在不在里面，not in 就是判断不包含在里面
+#         print("用户已注册")
+#     else:
+#         print("用户未注册")
+#         user.append(username)
+# print(user)
+'''
+    例子5：
+    一：实现注册功能
+        1、输入username、passwork、cpassword
+        2、3个值都不能为空，且错误次数为3次
+        3、用户名长度最少6位，最长20位，用户名不能重复
+        4、密码长度最少8位，最长15位；密码输入要一致
+        5、注册成功后，要写到文件中，格式：用户名，密码
+    二：登录功能实现
+        1、用户名和密码去文件里面读取登录
+        2、3次登录
+'''
+# f = open('test.txt','a+')
+# f.seek(0)
+# res = f.read()
+# all_user_name = []
+# for r in res.split('\n'):
+#     username = r.split(',')[0]
+#     all_user_name.append(username)
+# print(all_user_name)
+# print(len(all_user_name))
+# for i in range(3):
+#     username = input('username:').strip()
+#     pwd = input('pwd:').strip()
+#     cpwd = input('cpwd:').strip()
+#     if len(username) < 6 or len(username) > 20:
+#         print('用户名不合法！')
+#     elif len(pwd) < 8 or len(pwd) > 20:
+#         print('密码不合法')
+#     elif pwd != cpwd:
+#         print('两次密码不一致！')
+#     elif username in all_user_name:
+#         print("用户名已经被注册！")
+#     else:
+#         user_info = '%s,%s\n'%(username,pwd)
+#         f.write(user_info)
+#         print('注册成功！')
+#         break
+# else:
+#     print('错误次数过程。')
+# f.close()
+#登录
+all_user = {}
+res = open('test.txt').read()
+# username = input('username:')
+# pwd = input('pwd:')
+# user_info = username + ',' + pwd
+# if user_info in res:
+#     print('登录成功')
+# else:
+#     print('登录失败！')
+
+for r in res.split('\n'):
+    if r.strip() != '':
+        username = r.split(',')[0]
+        pwd = r.split(',')[1]
+        all_user[username] = pwd
 for i in range(3):
-    username = input('请输入用户名：')
-    # if user.count(username) >0 :
-    if username in user:  #in就是判断在不在里面，not in 就是判断不包含在里面
-        print("用户已注册")
+    username = input('username:')
+    pwd = input("pwd:")
+    if username in all_user:
+        if pwd == all_user.get(username):
+            print('欢迎登录')
+            break
+        else:
+            print('账号、密码错误！')
     else:
-        print("用户未注册")
-        user.append(username)
-print(user)
+        print('该用户未注册！')
