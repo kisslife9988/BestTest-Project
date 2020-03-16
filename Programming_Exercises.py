@@ -155,8 +155,8 @@
 #     print('错误次数过程。')
 # f.close()
 #登录
-all_user = {}
-res = open('test.txt').read()
+# all_user = {}
+# res = open('test.txt').read()
 # username = input('username:')
 # pwd = input('pwd:')
 # user_info = username + ',' + pwd
@@ -165,19 +165,65 @@ res = open('test.txt').read()
 # else:
 #     print('登录失败！')
 
-for r in res.split('\n'):
-    if r.strip() != '':
-        username = r.split(',')[0]
-        pwd = r.split(',')[1]
-        all_user[username] = pwd
-for i in range(3):
-    username = input('username:')
-    pwd = input("pwd:")
-    if username in all_user:
-        if pwd == all_user.get(username):
-            print('欢迎登录')
-            break
-        else:
-            print('账号、密码错误！')
-    else:
-        print('该用户未注册！')
+# for r in res.split('\n'):
+#     if r.strip() != '':
+#         username = r.split(',')[0]
+#         pwd = r.split(',')[1]
+#         all_user[username] = pwd
+# for i in range(3):
+#     username = input('username:')
+#     pwd = input("pwd:")
+#     if username in all_user:
+#         if pwd == all_user.get(username):
+#             print('欢迎登录')
+#             break
+#         else:
+#             print('账号、密码错误！')
+#     else:
+#         print('该用户未注册！')
+'''
+    例子6：监控日志
+        1、从日志里面找到，1分钟之内超过20次访问的IP
+        2、脚本没分钟运行一次
+    思路：
+        1、读取文件内容，获取IP地址
+        2、把每个IP地址存起来,使用字典存储（避免重复）
+        3、判断IP访问的次数是否超过20次
+        4、加入黑名单
+        
+'''
+# import time
+# point = 0
+# while True:
+#     ips = {}
+#     f = open(r'C:\Users\Administrator\Desktop\access.log',encoding='utf-8')
+#     f.seek(point)
+#     for line in f :
+#         ip = line.split()[0]
+#         if ip in ips:
+#             ips[ip] += 1
+#         else:
+#             ips[ip] = 1
+#     point = f.tell()   #记录文件指针的位置
+#     for ip,count in ips.items():
+#         if count >=20:
+#             print('%s  加入黑名单！'%ip)
+#     f.close()
+#     time.sleep(60)
+
+'''
+    例子7：购买程序
+    1、实现一个商品管理的程序
+        #输入1，添加商品；2、删除商品；3、查看所有商品
+        添加商品：
+            输入商品的名称：XX  商品存在提升已经存在
+            商品的价格：XXX  数量只能大于0的整数
+            商品的数量：XXX  数量只能为大于0的整数
+        删除商品：
+            输入商品名称：
+                iPhone  删除商品；如果输入的商品名称不存在，要提升不存在
+        查询商品：
+            输入商品名称：
+                iPhone  把对应的信息打印出出来；如果输入的商品名称不存在，要提升不存在
+                all：打印出所有的商品信息
+'''

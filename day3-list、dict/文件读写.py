@@ -23,3 +23,7 @@ for i in f.readlines():
     dict1[r[0]] = r[1]
     print(dict1)
 f.close()
+
+f = open('test.txt') #test.txt文件同py文件在同一目录下
+print(f.read())  #读取文件中的所有内容
+f.close() #关闭文件
