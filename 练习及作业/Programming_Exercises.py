@@ -227,3 +227,69 @@
                 iPhone  把对应的信息打印出出来；如果输入的商品名称不存在，要提升不存在
                 all：打印出所有的商品信息
 '''
+FILENAME = 'products.json' #如果变量名全是大写字母表示该变量是一个常量
+import json
+def get_file_content():
+    with open(FILENAME,encoding='utf-8') as f:
+        content = f.read()
+        if len(content) > 0:
+            res = json.loads(content)
+        else:
+            res = {}
+    return res
+def write_fiel_content(dic):
+    with open(FILENAME,'w',encoding='utf-8') as fw:
+        json.dump(dic,fw,indent=4,ensure_ascii=False)
+def check_digit(cs:str):
+    if cs.isdigit():
+        cs = int(cs)
+        if cs > 0:
+            return cs
+        else:
+            return 0
+    else:
+        print('商品数量必须是整数!')
+        return 0
+def add_product():
+    product_name = input('请输入商品名称：').strip()
+    count = input('请输入商品数量：').strip()
+    price = input('请输入商品价格：').strip()
+    all_products = get_file_content()
+    if check_digit(count) == 0:
+        print('数量输入不合法！')
+    elif check_digit(price) == 0:
+        print('价格输入不合法')
+    elif product_name in all_products:
+        print('商品已存在！')
+    else:
+        all_products[product_name] = {"count":int(count),"price":int(price)}
+        write_fiel_content(all_products)
+        print('添加成功！')
+def show_product():
+    product_name = input('请输入查询商品名称：').strip()
+    all_products = get_file_content()
+    if product_name == 'all':
+        print(all_products)
+    elif product_name not in all_products:
+        print('商品不存在！')
+    else:
+        print(all_products.get(product_name))
+def del_product():
+    product_name = input('请输入商品名称：').strip()
+    all_products = get_file_content()
+    if product_name in all_products:
+        all_products.pop(product_name)
+        print('删除成功！')
+        write_fiel_content(all_products)
+    else:
+        print('商品不存在！')
+
+choice = input('操纵权限：\n 1、添加商品 2、删除商品 3、查看商品信息\n 您的选择是：')
+if choice == '1':
+    add_product()
+elif choice == '2':
+    del_product()
+elif choice == '3':
+    show_product()
+else:
+    print('输入错误，请重新输入！')

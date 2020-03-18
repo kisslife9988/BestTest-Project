@@ -16,11 +16,13 @@ s = '''{
 }'''
 import json
 res = json.loads(s)  #json串(字符串)，转成字典；json的定义只能用双引号不能用单引号
-print(res)
+print('原始数据：',s)
+print('JSON对象：',res)
 print(res.keys())
 print(type(res))
 
 stus = {'test':123456,'test2':780,'test3':0000,'高博':'我爱你'}
+print(type(stus))
 res2 = json.dumps(stus,indent=4,ensure_ascii=False) #将字典，转换成json串；indent方法是用来进行缩进的可以以json格式进行显示;ensure_ascii=false中文可以正常显示
 print(res2)
 print(type(res2))
@@ -40,3 +42,19 @@ print('====================dump和dumps的区别================================
 f = open('stus2.json','w',encoding='utf-8')
 json.dump(stus,f,indent=4,ensure_ascii=False)
 f.close()
+print('=====================with方式打开文件=====================')
+with open('stus3.json','w',encoding='utf-8') as f:
+    json.dump(stus,f,indent=4,ensure_ascii=False)
+
+import json
+
+# Python 字典类型转换为 JSON 对象
+data = {
+    'no': 1,
+    'name': 'Runoob',
+    'url': 'http://www.runoob.com'
+}
+
+json_str = json.dumps(data)
+print("Python 原始数据：", data)
+print("JSON 对象：", json_str)
