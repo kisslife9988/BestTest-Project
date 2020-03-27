@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .c1{
+            width: 100px;
+            height: 100px;
+            /*外边框  1像素 红色 实现*/
+            border: 1px red solid;
+            /*水平居中*/
+            text-align: center;
+            /*垂直居中:等于自己设置的方块的高度值*/
+            line-height: 100px;
+            /*background-color: red;*/
+        }
+        .f1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <!--<div class="c1"></div>-->
+    <!--font-size  大小，font-weight  粗细-->
+    <!--<div style="font-size: xx-large;font-weight: bolder">金牛座</div>-->
+    <!--<div class="c1">哈哈</div>-->
+
+    <!--浮动-->
+    <!--<div class="f1">HTML</div>-->
+    <!--<div class="f1" style="background-color: green">HTML</div>-->
+    <!--<div class="f1" style="background-color: blue;float: right">HTML</div>-->
+
+    <!--宽度可以使用百分比,高度不可以写百分比-->
+    <!--<div style="width: 30%;height:50px;background-color: blue"></div>-->
+
+    <!--display属性：可以让标签在行内和块级之间自由转换
+        块转行内标签用：display：inline
+        行内标签转块标签用：display：block
+    -->
+    <!--<div style="display: inline">HCNE</div>-->
+    <!--<span style="display: block">HCIE</span>-->
+
+    <!--行内标签不可以应用宽、高外边距及内边的样式;如果使用display：inline-block则span标签就可以应用内外边距的样式因为它既是块又是行内标签-->
+    <!--<span style="width: 100px;height: 100px">gaobo</span>-->
+    <!--<span style="background-color:red;display:inline-block;width: 100px;height: 100px;">gaobo</span>-->
+    <!--display:none 隐藏属性-->
+    <!--<div style="width: 100px;height: 100px;border: 1px red solid;display: none"></div>-->
+
+
+    <!--外边距:内层DIV距离外层DIV的距离，不改变自身大小-->
+    <!--<div style="width: 100%;height: 100px;border: 1px red solid">-->
+        <!--<div style="width: 100%;height: 48px;background-color: blue;margin-top: 1px"></div>-->
+    <!--</div>-->
+
+    <!--内边距:改变自身大小-->
+    <!--<div style="width: 100%;height: 100px;border: 1px red solid">-->
+        <!--<div style="width: 100%;height: 48px;background-color: blue;padding-top: 1px"></div>-->
+    <!--</div>-->
+
+
+
+
+
+</body>
+</html>

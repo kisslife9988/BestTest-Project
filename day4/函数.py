@@ -24,3 +24,11 @@ def write_file(filename,content):
 d = {'name':'wyh','name2':'gaobo'}
 write_file('test.json',d)
 
+
+
+
+
+
+
+
+

@@ -1,0 +1,147 @@
+<!--html5-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--head中写的东西有个特点，就是不会再页面中呈现-->
+    <!--字符集编码-->
+    <meta charset="UTF-8">
+    <!--自动闭合标签，meta-->
+    <!--标签中存在属性，有标签自带属性和自定义属性-->
+    <!--content-&#45;&#45;打开页面1秒后刷新,然后跳转到百度首页-->
+    <!--<meta http-equiv="refresh" content="10;http:\\www.baidu.com" >-->
+    <!--title是你浏览器tab的名字-->
+    <title>TestHome</title>
+    <!--主动闭合标签title-->
+    <!--title的图标-->
+    <!--rel代表告诉浏览器我要把link当做title的图标-->
+    <link rel="shortcut icon" href="http://ui.imdsx.cn/static/image/dsx.jpg">
+    <!--引入css样式表-->
+    <link rel="stylesheet" href="xx.css">
+    <!--script标签学习，引入js或者写js的-->
+    <script></script>
+</head>
+<body>
+<!--&lt;!&ndash;段落标签，内容里面有回车是不会换行的，如果想换行需要加入br标签&ndash;&gt;-->
+<!--<p>这是一个段落标签！<br>-->
+    <!--这是换行测试！</p>-->
+<!--&lt;!&ndash;标题标签，分为6中从h1-h6&ndash;&gt;-->
+<!--<h1>标题标签1</h1>-->
+<!--<h2>标题标签2</h2>-->
+<!--<h3>标题标签3</h3>-->
+<!--<h4>标题标签4</h4>-->
+<!--<h5>标题标签5</h5>-->
+<!--<h6>标题标签6</h6>-->
+<!--div标签是块级标签，无论自己有多大都占满一整行；伪白板标签-->
+<!--<div>测试！</div>-->
+<!--&lt;!&ndash;span是行内标签或者叫内联标签，自己有多大就占多大的地方;如果内容不加标签默认就是行内标签；-->
+    <!--span：白板标签，没有附着任何CSS样式的标签就叫做白班标签&ndash;&gt;-->
+<!--<span>测试！</span>-->
+<!--<span>测试！</span>-->
+<!--文本框，placeholder,灰色底纹显示的文字;name属性是跟后端交互的key，value属性是跟后端交互的值-->
+<!--<input type="text" placeholder="请输入用户名：" value="admin" name="username"><br>-->
+<!--<input type="text" placeholder="请输入密码：" name="passwd"><br>-->
+<!--&lt;!&ndash;password密码显示&ndash;&gt;-->
+<!--<input type="password" placeholder="请输入用户名：" value="admin" name="username">-->
+<!--单选按钮，radio按钮-->
+<!--<span>男</span><input type="radio" name="sex">-->
+<!--<span>女</span><input type="radio" name="sex"><br>-->
+<!--&lt;!&ndash;check box 多选框&ndash;&gt;-->
+<!--<span>奔驰</span><input type="checkbox" >-->
+<!--<span>宝马</span><input type="checkbox" ><br>-->
+<!--&lt;!&ndash;上传文件&ndash;&gt;-->
+<!--<input type="file">-->
+<!--表单标签-->
+<!--<form action="www.baidu.com" method="get">-->
+    <!--<div>-->
+        <!--<span>用户名：</span>-->
+        <!--<input type="text" placeholder="请输入用户名">-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--<span>密&nbsp&nbsp&nbsp码：</span>-->
+        <!--<input type="password" placeholder="请输入密码">-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--&lt;!&ndash;button如果想要有操作，只能通过js绑定事件来做&ndash;&gt;-->
+        <!--<input type="button" value="登录">-->
+        <!--&lt;!&ndash;Submit按钮如果和form表单连用则会直接出发请求&ndash;&gt;-->
+        <!--<input type="submit" value="注册">-->
+        <!--&lt;!&ndash;当reset和form表单连用时，会触发重置操作&ndash;&gt;-->
+        <!--<input type="reset">-->
+    <!--</div>-->
+<!--</form>-->
+<!--&lt;!&ndash;label扩展input的可点击范围&ndash;&gt;-->
+<!--<label for="i1">用户名</label>-->
+<!--<input id="i1" type="text" placeholder="请输入密码：">-->
+<!--复文本标签：textarea-->
+<!--<textarea>金牛座复文本标签</textarea>-->
+
+<!--下拉框标签：select-->
+<!--<select>-->
+    <!--<option value="1">中秋</option>-->
+    <!--<option value="2">国庆</option>-->
+    <!--<option value="3">春节</option>-->
+    <!--<option selected="selected">修选不上</option>-->
+<!--</select>-->
+<!--<select>-->
+    <!--<optgroup label="河北">-->
+        <!--<option>保定</option>-->
+        <!--<option>石家庄</option>-->
+    <!--</optgroup>-->
+    <!--<optgroup label="黑龙江">-->
+        <!--<option>齐齐哈尔</option>-->
+        <!--<option>哈尔滨</option>-->
+    <!--</optgroup>-->
+<!--</select>-->
+
+<!--&lt;!&ndash;超链接标签：a标签&ndash;&gt;-->
+<!--<a href="http://www.baidu.com">跳转到百度</a>-->
+
+<!--&lt;!&ndash;图片标签：img&ndash;&gt;-->
+<!--<img src="http://ui.imdsx.cn/static/image/dsx.jpg" alt="图片加载失败文案">-->
+
+<!--列表：ul：点的列表-->
+<!--<ul>-->
+    <!--<li>第一列</li>-->
+    <!--<li>第二列</li>-->
+<!--</ul>-->
+<!--&lt;!&ndash;数字格式列表？&ndash;&gt;-->
+<!--<ol>-->
+    <!--<li>第一列</li>-->
+    <!--<li>第二列</li>-->
+<!--</ol>-->
+
+<!--表格标签：table:-->
+<!--<table border="1">-->
+    <!--<thead>-->
+        <!--<tr>-->
+            <!--<th>id</th>-->
+            <!--<th>请求参数</th>-->
+            <!--<th>请求方法</th>-->
+            <!--<th colspan="2">请求结果</th>-->
+        <!--</tr>-->
+    <!--</thead>-->
+    <!--<tbody>-->
+        <!--<tr>-->
+            <!--<th>id</th>-->
+            <!--<th rowspan="2">post</th>-->
+            <!--<th>name</th>-->
+            <!--<th>ture</th>-->
+            <!--<th>haha</th>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<th>id</th>-->
+            <!--<th>name</th>-->
+            <!--<th>ture</th>-->
+            <!--<th>haha</th>-->
+        <!--</tr>-->
+    <!--</tbody>-->
+<!--</table>-->
+
+
+
+
+
+
+
+</body>
+</html>

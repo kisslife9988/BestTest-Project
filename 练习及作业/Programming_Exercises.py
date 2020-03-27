@@ -227,69 +227,200 @@
                 iPhone  把对应的信息打印出出来；如果输入的商品名称不存在，要提升不存在
                 all：打印出所有的商品信息
 '''
-FILENAME = 'products.json' #如果变量名全是大写字母表示该变量是一个常量
-import json
-def get_file_content():
-    with open(FILENAME,encoding='utf-8') as f:
-        content = f.read()
-        if len(content) > 0:
-            res = json.loads(content)
-        else:
-            res = {}
-    return res
-def write_fiel_content(dic):
-    with open(FILENAME,'w',encoding='utf-8') as fw:
-        json.dump(dic,fw,indent=4,ensure_ascii=False)
-def check_digit(cs:str):
-    if cs.isdigit():
-        cs = int(cs)
-        if cs > 0:
-            return cs
-        else:
-            return 0
-    else:
-        print('商品数量必须是整数!')
-        return 0
-def add_product():
-    product_name = input('请输入商品名称：').strip()
-    count = input('请输入商品数量：').strip()
-    price = input('请输入商品价格：').strip()
-    all_products = get_file_content()
-    if check_digit(count) == 0:
-        print('数量输入不合法！')
-    elif check_digit(price) == 0:
-        print('价格输入不合法')
-    elif product_name in all_products:
-        print('商品已存在！')
-    else:
-        all_products[product_name] = {"count":int(count),"price":int(price)}
-        write_fiel_content(all_products)
-        print('添加成功！')
-def show_product():
-    product_name = input('请输入查询商品名称：').strip()
-    all_products = get_file_content()
-    if product_name == 'all':
-        print(all_products)
-    elif product_name not in all_products:
-        print('商品不存在！')
-    else:
-        print(all_products.get(product_name))
-def del_product():
-    product_name = input('请输入商品名称：').strip()
-    all_products = get_file_content()
-    if product_name in all_products:
-        all_products.pop(product_name)
-        print('删除成功！')
-        write_fiel_content(all_products)
-    else:
-        print('商品不存在！')
+# FILENAME = 'products.json' #如果变量名全是大写字母表示该变量是一个常量
+# import json
+# def get_file_content():
+#     with open(FILENAME,encoding='utf-8') as f:
+#         content = f.read()
+#         if len(content) > 0:
+#             res = json.loads(content)
+#         else:
+#             res = {}
+#     return res
+# def write_fiel_content(dic):
+#     with open(FILENAME,'w',encoding='utf-8') as fw:
+#         json.dump(dic,fw,indent=4,ensure_ascii=False)
+# def check_digit(cs:str):
+#     if cs.isdigit():
+#         cs = int(cs)
+#         if cs > 0:
+#             return cs
+#         else:
+#             return 0
+#     else:
+#         print('商品数量必须是整数!')
+#         return 0
+# def add_product():
+#     product_name = input('请输入商品名称：').strip()
+#     count = input('请输入商品数量：').strip()
+#     price = input('请输入商品价格：').strip()
+#     all_products = get_file_content()
+#     if check_digit(count) == 0:
+#         print('数量输入不合法！')
+#     elif check_digit(price) == 0:
+#         print('价格输入不合法')
+#     elif product_name in all_products:
+#         print('商品已存在！')
+#     else:
+#         all_products[product_name] = {"count":int(count),"price":int(price)}
+#         write_fiel_content(all_products)
+#         print('添加成功！')
+# def show_product():
+#     product_name = input('请输入查询商品名称：').strip()
+#     all_products = get_file_content()
+#     if product_name == 'all':
+#         print(all_products)
+#     elif product_name not in all_products:
+#         print('商品不存在！')
+#     else:
+#         print(all_products.get(product_name))
+# def del_product():
+#     product_name = input('请输入商品名称：').strip()
+#     all_products = get_file_content()
+#     if product_name in all_products:
+#         all_products.pop(product_name)
+#         print('删除成功！')
+#         write_fiel_content(all_products)
+#     else:
+#         print('商品不存在！')
+#
+# choice = input('操纵权限：\n 1、添加商品 2、删除商品 3、查看商品信息\n 您的选择是：')
+# if choice == '1':
+#     add_product()
+# elif choice == '2':
+#     del_product()
+# elif choice == '3':
+#     show_product()
+# else:
+#     print('输入错误，请重新输入！')
 
-choice = input('操纵权限：\n 1、添加商品 2、删除商品 3、查看商品信息\n 您的选择是：')
-if choice == '1':
-    add_product()
-elif choice == '2':
-    del_product()
-elif choice == '3':
-    show_product()
-else:
-    print('输入错误，请重新输入！')
+'''
+    校验小数类型
+    正小数：
+    1、小数点个数为1
+    2、小数点左边和右边都是整数
+    负小数：
+    1、小数点个数为1
+    2、小数点左边和右边都是整数
+    3、负号开头，并且只有一个负号
+'''
+# def check_float(s):
+#     '''
+#     这个函数的作用就是判断传入的字符串是否是合法的小数
+#     :param s: 传入一个字符串
+#     :return: True/False
+#     '''
+#     s = str(s)
+#     print(s)
+#     if s.count('.') == 1:
+#         s_split = s.split('.')
+#         # left = s_split[0]
+#         # right = s_split[1]
+#         left,right = s_split
+#         if left.isdigit() and right.isdigit():
+#             return True
+#         elif left.startswith('-') and left[1:].isdigit() and right.isdigit():
+#             print(left[1:])
+#             return  True
+#     return False
+# print(check_float(---2.3))
+# print(check_float(2.3))
+# print(check_float(-3.45))
+# print(check_float('a.2'))
+# print(check_float('1.22'))
+# print(check_float('---2.3'))
+
+'''
+    随机生成密码并写入文件
+        def gen_password(num):
+            #num 代表生成密码的条数
+            pass
+        2、密码复杂度
+            长度在8-16之间
+            密码必须包括大写字母、小写字母、数字、特殊字符
+                思路1：
+                1、分别从大写字母、小写字母、数字、特殊字符各取一个
+                2、在从所以的字符里面取8-4个，和第一步获取到的结果拼接起来
+                思路2：
+                1、将所有的大写字母、小写字母、数字、特殊字符拼接起来
+                2、随机取8位，判断里面是否都包括大写字母、小写字母、数字、特殊字符
+                3、如果包含的话，存起来，不符合的话重新在活区一个
+            密码不能重复
+        3、生成的密码保存到文件中
+    生成一批双色球号码
+        def gen_seq(num):
+            pass
+        1、中奖号码由6个红色球号码和1个蓝色球号码组成
+        2、红球范围：1-33
+        3、篮球范围：1-16
+        4、产生的不能重复
+'''
+# import random,string
+# def get_passwords1():
+#         pwd_len = random.randint(8,16)
+#         upper = random.sample(string.ascii_uppercase,1)
+#         lower = random.sample(string.ascii_lowercase,1)
+#         digit = random.sample(string.digits,1)
+#         punctuation = random.sample(string.punctuation,1)
+#         other = random.sample(string.ascii_letters+string.digits+string.punctuation,pwd_len-4)
+#         res = upper + lower + digit + punctuation + other
+#         random.shuffle(res)
+#         res = ''.join(res)
+#         return ''.join(res)
+# def get_password2():
+#     pwd_len = random.randint(8, 16)
+#     all_str = string.ascii_letters + string.digits + string.punctuation
+#     res = set(random.sample(all_str,pwd_len))
+#     if res & set(string.ascii_uppercase) and res & set(string.ascii_lowercase) and res & set(string.digits)\
+#         and set(string.punctuation):
+#         return ''.join(res)
+#     return get_password2()
+# def write_file(pw):
+#     with open('password.txt','w',encoding='utf-8') as fw:
+#         fw.writelines(pw)
+# # all_passwords = set()
+# all_passwords = []
+# num = int(input('请输入要产生密码的条数：').strip())
+# while len(all_passwords) != num:
+#     res = get_password2() + '\n'
+#     all_passwords.append(res)
+#     write_file(all_passwords)
+
+#作业2
+# import random
+# def gen_seq():
+#     all_red_ball = [str(i).zfill(2) for i in range(1,34)]
+#     all_blue_ball =  [str(i).zfill(2) for i in range(1,17)]
+#     blue = random.choice(all_blue_ball)
+#     red = random.sample(all_red_ball,6)
+#     red = ' '.join(red)
+#     return '红球：%s  篮球:%s'%(red,blue)
+# def write_file(pw):
+#     with open('shuangseqiu.txt','w',encoding='utf-8') as fw:
+#         fw.writelines(pw)
+# all_seq = set()
+# num = int(input('请输入次数：').strip())
+# while len(all_seq) != num:
+#     res = gen_seq() + '\n'
+#     all_seq.add(res)
+#     write_file(all_seq)
+
+
+'''
+    查看文件路径
+'''
+# def find_file(path,keyword):
+#     '''查找文件路径'''
+#     res = os.walk(path)
+#     for cur_path,dirs,files in res:
+#         for file_name in files:
+#             if keyword in file_name:
+#                 print('该文件在%s目录下'%cur_path)
+# find_file('G:\\','fullstack')
+
+'''
+ 
+'''
+
+
+

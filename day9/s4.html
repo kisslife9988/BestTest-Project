@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" id="username" placeholder="请输入用户名">
+    <input type="text" id="password" placeholder="请输入密码">
+    <input id="button" type="button" value="登录" >
+    <script>
+        function show() {
+            var name = 'gaobo'
+            var pwd = '123456'
+            var username=document.getElementById("username").value;
+            var password=document.getElementById("password").value;
+            // console.log('这是用户名：'+username)
+            // console.log('这是密码：'+password)
+            // if(name==username && pwd == password){
+            //     console.log('用户名正确！'+username)
+            // }else if(username=='wyh' && password=='gaobo'){
+            //     // console.log(username+' love '+password)
+            //     alert(username+' love '+password)
+            // } else{
+            //     console.log('用户名错误')
+            // }
+
+             // js中如果2个等号判断只要值相同则为真，如果三个等号判断必须类型和值都相同则为真
+            // if(1==='1'){
+            //     alert('111')
+            //  }else{
+            //     alert('222')
+            //  }
+
+            // switch 学习
+            // switch (a){
+            //     case 1:
+            //         alert('111');
+            //         break
+            //     case 2:
+            //         alert('222');
+            //         break
+            //     default:
+            //         alert('333')
+            // }
+            var list = ['gaobo','wyh','lw']
+            var dict = {"name":'test',"age":123}
+            // for (var i in list){
+            //     console.log(list[i])
+            // }
+            // for (var i in dict){
+            //     // console.log(dict[i])
+            //     console.log(i+dict[i])
+            // }
+            // 第二种循环
+            // for(var i=0;i<list.length;i++){
+            //     console.log(list[i])
+            // }
+            // 第三种循环
+            // while (1==1){
+            //     console.log('111')
+            //     break
+            // }
+
+
+        }
+        // 第一种函数   普通函数
+        function demo(a) {
+
+        }
+        // 匿名函数，与隐式绑定
+        // var button = document.getElementById('button')
+        // button.onclick=function () {
+        //     console.log('1111')
+        // }
+        // js作用域和Python的一样
+        function demo() {
+            var name = 'gaobo'
+            console.log(name)
+        }
+        demo()
+
+    </script>
+</body>
+</html>

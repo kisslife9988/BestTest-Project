@@ -1,0 +1,20 @@
+回顾：
+1、模块是啥：是一个Python文件
+    1、标准模块
+        os、time、random、hashlib
+    2、第三方模块
+        1、pip install XXX
+            xlrd、xlwd、xlutils、pymysql
+        2、.whl文件的安装：pip install  XXX.whl
+        3、tar文件:先解压，进入文件找到setup.py然后执行，Python setup.py  install
+    3、自己开发的模块
+
+今日所讲内容：
+    1、Python发邮件、写日志
+    2、操作Redis，
+    3、内置函数
+    4、导入模块
+        1、导入模块的顺序
+        2、导入模块的实质
+            就是把这个Python文件运行一次
+    5、怎么用Python开发接口

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .c1{
+            /*width: 100%;*/
+            height: 49px;
+            background-color: green;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+        .c2{
+            height: 48px;
+            width: 48px;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            background-color: orange;
+        }
+
+    </style>
+</head>
+<!--postion分层属性,fixd 绝对定位-->
+<body style="margin: 0">
+    <!--<div class="c1"></div>-->
+    <!--<div style="width: 100px;height: 1000px;background-color: blue">asdfasdasdfasd</div>-->
+    <!--<div style="margin-top: 48px;width: 100px;height: 1000px;">asdfasdasdfasd</div>-->
+
+
+    <!--<div class="c2"></div>-->
+    <!--postion 相对定位：相对于外层DIV进行上下左右的定位-->
+    <!--<div style="position: relative;width: 500px;height: 500px;border: 1px black solid">-->
+        <!--<div style="position: absolute;width: 100px;height: 100px;background-color: blue"></div>-->
+        <!--<div style="left:0;bottom:0;position: absolute;width: 100px;height: 100px;background-color: green"></div>-->
+        <!--<div style="right: 0;top:0;position: absolute;width: 100px;height: 100px;background-color: red"></div>-->
+        <!--<div style="right: 0;bottom:0;position: absolute;width: 100px;height: 100px;background-color: yellow"></div>-->
+    <!--</div>-->
+
+    <!--z-index属性:值取1-99，谁的值大，谁的优先级就高-->
+    <!--<div style="position:relative;width: 200px;height: 200px;border: 1px red solid">-->
+        <!--<div style="z-index:10;position: absolute;width: 200px;height: 200px;background-color: green"></div>-->
+        <!--<div style="z-index:9;position: absolute;width: 200px;height: 200px;background-color: blue"></div>-->
+    <!--</div>-->
+    <!--点击登录图标鼠标变小手-->
+    <!--<input type="button" value="登录" style="cursor: pointer">-->
+    <!--overflow滚动条：
+        overflow:hidden当图片或内容大于外层div时，自动截取左上角图片
+        overflow:scroll,出现滚动条，如果内容小于外边框也会出现滚动条
+        overflow:auto:出现滚动条；如果内容小于外边框自动隐藏滚动条
+    -->
+    <!--<div style="overflow:auto;border: 1px black solid;width: 2000px;height: 2000px">-->
+        <!--<img src="http://ui.imdsx.cn/static/image/dsx.jpg">-->
+    <!--</div>-->
+
+    <!--background属性-->
+    <!--<div style="background-image:url('http://ui.imdsx.cn/static/image/dsx_Small.jpg');background-repeat:repeat;width: 500px;height: 500px;border: 1px black solid;">-->
+    </div>
+
+
+    <!--<div style="background-position: 1px 1px;background: no-repeat;background-image:url('http://ui.imdsx.cn/static/image/dsx_Small.jpg');width: 50px;height: 50px;border: 1px black solid"></div>-->
+
+
+
+</body>
+</html>
